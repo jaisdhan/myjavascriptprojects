@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let enviar =()=> document.forms[0].submit();
+
+    </script>
+</head>
+<body>
+    <form method="GET" action="escudos.php">
+        <select name="escudos" onchange="enviar()">
+            <option value="rmadrid">Real Madrid</option>
+            <option value="atmadrid">Atletico de Madrid</option>
+            <option value="valencia">Valencia F.C.</option>
+            <option value="sevilla">Sevilla F.C.</option>
+        </select>
+    </form>
+</body>
+</html>

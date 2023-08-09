@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    
+    
+    
+    <link rel="stylesheet" href="blackjack.css">
+</head>
+<body align="center">
+    <script>
+        function getRandomCard(){
+    let carta=["A", "2","3","4","5","6","7","8","9","10","J","K","Q"];
+    let palo=["C","D","H","S"];
+    let carta_aleatoria=Math.floor(Math.random()*carta.length);
+    let palo_aleatorio=Math.floor(Math.random()*palo.length);
+
+    let c = carta[carta_aleatoria];
+    let p = palo[palo_aleatorio];
+    let card = [c, p]
+    return card
+}
+
+function jugar(){
+    carta1_croupier=getRandomCard()
+    carta2_croupier=getRandomCard()
+    document.getElementById("1").src=`./imagenes/cards/${carta1_croupier[0]}-${carta1_croupier[1]}.png`
+
+    tuCarta1=getRandomCard()
+    tuCarta2=getRandomCard()
+    document.getElementById("3").src=`./imagenes/cards/${tuCarta1[0]}-${tuCarta1[1]}.png`
+    document.getElementById("4").src=`./imagenes/cards/${tuCarta2[0]}-${tuCarta2[1]}.png`
+
+    let e = prompt("¿Vas a coger otra carta? Escribe sí o no.").toLowerCase();
+    
+}
+function otraCarta(){
+    let tuCarta=getRandomCard()
+    let imagen = document.createElement("img")
+    imagen.setAttribute("src", `./imagenes/cards/${tuCarta[0]}-${tuCarta[1]}.png`)
+    document.getElementById("tus-cartas").appendChild(imagen);
+    
+}
+
+
+    </script>
+    <img id="vegas" src="./imagenes/vegas.png">
+    <img id="casino" src="./imagenes/casino.png">
+    
+    <h2>Croupier: <span id="croupier"></span></h2>
+    <div id="cartas-croupier">
+        <img id="1" src="./imagenes/cards/BACK.png">
+        <img id="2" src="./imagenes/cards/BACK.png">
+    </div>
+    
+
+    <h2>Tus Cartas: <span id="Tú"></span></h2>
+    <div id="tus-cartas">
+        <img id="3" src="./imagenes/cards/BACK.png">
+        <img id="4" src="./imagenes/cards/BACK.png">
+    </div>
+    <br>
+    <button id="jugar" onclick="jugar()">Jugar</button>
+    <button id="otra-carta" onclick="otraCarta()" type="button">Otra Carta</button>
+    <p id="resultados"></p>
+</body>
+</html>

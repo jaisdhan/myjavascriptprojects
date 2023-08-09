@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function calcular() {
+            var c1 = parseInt(document.miform.caja1.value);
+            var c2 = parseInt(document.miform.caja2.value);
+            var c3 = parseInt(document.miform.caja3.value);
+            var c4 = parseInt(document.miform.caja4.value);
+            var c5 = parseInt(document.miform.caja5.value);
+            document.miform.caja6.value = c1+c2-(c3*c4/c5);
+            // todo lo de una caja es un texto
+        }
+    </script>
+</head>
+<body>
+    <form name="miform">
+        <input type="number" name="caja1">
+        <label>+</label>
+        <input type="number" name="caja2">
+        <label>-</label>
+        <input type="number" name="caja3">
+        <label>*</label>
+        <input type="number" name="caja4">
+        <label>/</label>
+        <input type="number" name="caja5">
+        <button type="button" onclick="calcular()">=</button>
+        <input type="number" name="caja6">
+    </form>
+</body>
+</html>

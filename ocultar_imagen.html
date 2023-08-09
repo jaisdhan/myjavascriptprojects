@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      /*  
+        function ocultar(){
+            document.images[0].style.visibility='hidden';
+}
+ */
+let visibilidad;
+    function ocultar(){
+        let imagen = document.images[0];
+        let visibilidad = imagen.style.visibility;
+        imagen.style.visibility = ((visibilidad == "visible") ? 'hidden' : 'visible');
+    }
+    
+    </script>
+</head>
+<body>
+    <img  src="imagenes/cat.jpg" style="visibility:visible">
+    <br>
+    <button onclick="ocultar()">Ocultar</button>
+</body>
+</html>

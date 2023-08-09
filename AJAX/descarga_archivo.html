@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo con AJAX</title>
+    <script type="text/javascript">
+        "use strict mode"
+        function descargaArchivo() {
+            //Obtener la instancia del objeto XMLHttpRequest
+            if(window.XMLHttpRequest){
+                peticion_http = new XMLHttpRequest();
+            }
+            else if(window.ActiveXObject) {
+                peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        
+        //Preparar la funcion de respuesta
+        peticion_http.onreadystatechange = muestraContenido;
+
+        //Realizar peticion HTTP
+        peticion_http.open("GET", "http://localhost/escudos.php?escudos=", true);
+        peticion_http.send(null);
+
+        function muestraContenido() {
+            if(peticion_http.readyState == 4){
+                if(peticion_http.status == 200){
+                    alert(peticion_http.responseText);
+                }
+            }
+        }
+    }
+    descargaArchivo()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="añadir_atributo.css">
+    <script>
+        "use strict mode"
+        // lista desplegable entre divs y dentro de selects en el que seleccionamos una película, onchange llamamos a función cambiar(imagen). En 
+        // option value poner imagen. Crear dentro de la función una etiqueta img, .setAttribute(width, "aqui escribir valor") -> luego
+        // document.getElementById("div").appendChild;
+        let imagen = document.createElement("img");
+        let cambiar = () =>{
+            let lista = document.getElementById("peliculas");
+            let value = lista.value;
+            console.log(value)
+            imagen.setAttribute("src", `imagenes/${value}.jpg`)
+            imagen.setAttribute("width","500");
+            imagen.setAttribute("height", "600")
+            document.getElementById("imagen-pelicula").appendChild(imagen);
+            
+
+        }
+
+
+    </script>
+    
+</head>
+<body align="center">
+    <select id="peliculas" onchange="cambiar()">
+        <option value="origen" id="origen">Origen</option>
+        <option value="vengadores" id="vengadores">Los Vengadores</option>
+        <option value="avatar" id="avatar">Avatar</option>
+        <option value="amelie" id="amelie">Amelie</option>
+    </select>
+    <p >Película</p>
+    <div id="imagen-pelicula">
+    </div>
+</body>
+</html>

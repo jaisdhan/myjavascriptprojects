@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function peon(){
+                for(j=0;j<8;j++){
+                    
+                        document.getElementById(`td1${j}`).innerHTML='<big><big><big><big><big><big><big>&#9823</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td6${j}`).innerHTML='<big><big><big><big><big><big><big>&#9817</big></big></big></big></big></big></big>';
+                    
+                }
+            }
+       
+
+        function torre(){
+            for(j=0;j<8;j++){
+                if((j==0)|| (j==7)){
+                        document.getElementById(`td0${j}`).innerHTML='<big><big><big><big><big><big><big>&#9820</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td7${j}`).innerHTML='<big><big><big><big><big><big><big>&#9814</big></big></big></big></big></big></big>';
+                }
+            }
+        }
+
+        function caballo(){
+            for(j=0;j<8;j++){
+                if((j==1)|| (j==6)){
+                        document.getElementById(`td0${j}`).innerHTML='<big><big><big><big><big><big><big>&#9822</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td7${j}`).innerHTML='<big><big><big><big><big><big><big>&#9816</big></big></big></big></big></big></big>';
+                }
+            }
+        }
+
+        function alfil(){
+            for(j=0;j<8;j++){
+                if((j==2)|| (j==5)){
+                        document.getElementById(`td0${j}`).innerHTML='<big><big><big><big><big><big><big>&#9821</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td7${j}`).innerHTML='<big><big><big><big><big><big><big>&#9815</big></big></big></big></big></big></big>';
+                }
+            }
+        }
+        function reina(){
+            for(j=0;j<8;j++){
+                if(j==4){
+                        document.getElementById(`td0${j}`).innerHTML='<big><big><big><big><big><big><big>&#9818</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td7${j}`).innerHTML='<big><big><big><big><big><big><big>&#9812</big></big></big></big></big></big></big>';
+                }
+            }
+        }
+
+        function rey(){
+            for(j=0;j<8;j++){
+                if(j==3){
+                        document.getElementById(`td0${j}`).innerHTML='<big><big><big><big><big><big><big>&#9819</big></big></big></big></big></big></big>';
+                   
+                        document.getElementById(`td7${j}`).innerHTML='<big><big><big><big><big><big><big>&#9813</big></big></big></big></big></big></big>';
+                }
+            }
+        }
+        
+
+        document.write("<table border=0 noshade align='center'>");
+        for (let i = 0; i < 8; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < 8; j++) {
+                let c = i + j;
+                if (c % 2 != 0) {
+                    document.write(`<td width="90" height="90" style="background-color:#A2231D" id="td${i}${j}" align="center"></td>`);
+                }
+                else {
+                    document.write(`<td bgcolor='#FAF4D7' width='90' height='90' id='td${i}${j}' align="center"></td>`);
+                }
+
+            }
+            document.write("</tr>")
+        }
+        document.write("</table>")
+
+        document.write("<font size='24pt' color='#A2231D' face='Nosifer' align='center'>¡El Ajedrez de Halloween!</font>")
+    
+    peon();
+    torre();
+    caballo();
+    alfil();
+    rey();
+    reina();
+    
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+    let estado_cambio=false;
+    function cambiar(){
+        /*
+        if(!estado_cambio){
+            document.images[0].src = 'imagenes/nba.png';
+            estado_cambio=true;
+        }
+        else{
+            document.images[0].src = 'imagenes/abuelita-modified.png';
+            estado_cambio=false;
+        }*/
+        let imagen = document.images[0];
+        imagen.src = (imagen.src=="http://127.0.0.1:5500/imagenes/abuelita-modified.png") ? "http://127.0.0.1:5500/imagenes/nba.png":"http://127.0.0.1:5500/imagenes/abuelita-modified.png";
+    }
+
+    </script>
+</head>
+<body>
+    <img src="http://127.0.0.1:5500/imagenes/abuelita-modified.png" width="200" height="200">
+    <br>
+    <button onclick="cambiar()">Cambiar Imagen</button>    
+</body>
+</html>

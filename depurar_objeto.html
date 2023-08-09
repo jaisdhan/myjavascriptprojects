@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict mode"
+        let nombre = JSON.parse(localStorage.getItem("input"));
+        alert(nombre.name);
+        let hangar={
+            marcaAvión:"Boeing",
+            númeroAvión:"B-07078",
+            capacidad: 220,
+            añoConstrucción:1990,
+        }
+        /*
+        let angar = JSON.stringify(hangar)
+        let angar1 = angar.replace("marcaAvión", "marcaAvion")
+        let angar2 =angar1.replace("númeroAvión", "numeroAvion")
+        let angar3=angar2.replace("añoConstrucción", "anoConstruccion")
+        hangar = JSON.parse(angar3)
+
+        console.log(hangar)
+        */
+
+        let keys = Object.keys(hangar);
+        const removeAccents = (str) => {
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+        let values = Object.values(hangar);
+        hangar = {}
+        for(i=0;i<keys.length; i++){
+            /*
+            keys[i]=keys[i].replace(/ó/gi,"o");
+            keys[i]=keys[i].replace(/ú/gi,"u");
+            */
+           keys[i]=removeAccents(keys[i])
+           hangar[keys[i]] = values[i];
+        }
+        
+        console.log(keys);
+
+        
+        console.log(hangar);
+
+        
+
+
+    </script>
+</body>
+</html>
